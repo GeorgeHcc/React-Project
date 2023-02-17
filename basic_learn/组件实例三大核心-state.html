@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>React-Demo</title>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@17/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+    ></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="app"></div>
+
+    <script type="text/babel">
+      class Weather extends React.Component {
+        constructor(props) {
+          super(props);
+          //初始化状态
+          this.state = { isHot: true };
+        }
+
+        render() {
+          //读取状态
+          const { isHot } = this.state;
+          return (
+            <h1 style={{ color: "blue", fontSize: "40px" }}>
+              今天天气很{isHot ? "炎热" : "凉爽"}{" "}
+            </h1>
+          );
+        }
+      }
+      ReactDOM.render(<Weather />, document.getElementById("app"));
+    </script>
+  </body>
+</html>

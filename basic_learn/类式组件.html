@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>React-Demo</title>
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script> 
+</head>
+<body>
+    <div id ="app"></div>
+
+    <script type="text/babel">
+        /*
+        类式组件：适用于复杂组件
+        */
+        class MyComponent extends React.Component{
+            render(){
+                //1.render放在MyComponent的原型对象上，供实例使用
+                //2.render中的this指向MyComponent的实例对象
+                // console.log(this);
+                return (<h2>类式组件</h2>)
+                    
+            }
+        }
+
+        //渲染组件到页面
+        ReactDOM.render(<MyComponent/>,document.getElementById('app'))
+        /*
+        执行ReactDOM.render()发生了什么？
+        1.React解析MyComponent
+        2.发现MyComponent是类定义的,new出来该实例，并通过该实例调用原型上的render方法
+        3.将render返回的虚拟DOM转化为真实DOM
+        */
+    </script>
+</body>
+</html>

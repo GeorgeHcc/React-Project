@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>React-Demo</title>
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script> 
+</head>
+<body>
+    <div id ="app"></div>
+
+    <script type="text/babel">//babel开启严格模式
+        /*
+        JSX语法：
+            1.定义虚拟DOM时不要用引号
+            2.标签中混入JS表达式用{}
+            3.样式的类名指定不要用class，要用className
+            4.内联样式要用style={{key：value}}
+            5.只有一个根标签
+            6.标签必须闭合
+            7.标签首字母
+            （1）小写，则将该标签转为html中同名元素
+            （2)大写，渲染组件
+        */
+       /*
+       函数式组件：适用于简单组件
+       */
+       function Header(){
+        return <h1>react header</h1>
+       }
+       
+        ReactDOM.render(<Header/>,document.getElementById("app"))
+    </script>
+</body>
+</html>
