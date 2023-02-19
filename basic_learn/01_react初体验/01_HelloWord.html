@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>React-Demo</title>
+  </head>
+  <body>
+    <script src="../lib/react.js"></script>
+    <script src="../lib/react-dom.js"></script>
+    <script src="../lib/babel.js"></script>
+
+    <div id="app"></div>
+
+    <script type="text/babel">
+      //react18以前的写法
+      // ReactDOM.render(<p>Hello Word</p>,document.querySelector('#app'))
+      let msg = "hello word";
+      function fix() {
+        msg = "ready fix!";
+        renderRoot()
+      }
+      const root = ReactDOM.createRoot(document.querySelector("#app"));
+     function renderRoot(){
+        root.render(
+        <div>
+          <p>{msg}</p>
+          <button onClick={fix}>click me to fix</button>
+        </div>
+      );
+     }
+     renderRoot()
+    </script>
+  </body>
+</html>

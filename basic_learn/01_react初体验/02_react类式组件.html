@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>React-Demo</title>
+  </head>
+  <body>
+    <script src="../lib/react.js"></script>
+    <script src="../lib/react-dom.js"></script>
+    <script src="../lib/babel.js"></script>
+
+    <div id="root"></div>
+
+    <script type="text/babel">
+      class App extends React.Component {
+        constructor() {
+          super();
+          this.state = {
+            name: "App Component",
+          };
+          this.mutation=this.mutation.bind(this)
+        } 
+        mutation() {
+          console.log('mutation');
+          // this.setState((preState)=> ({
+          //   name: `${preState.name} mutated by React!`,
+          // }));
+          this.setState({
+            name:'react'
+          })
+        }
+        render() {
+          return (
+            <div className="App">
+              this is {this.state.name}
+              <button onClick={this.mutation}>mutation</button>
+            </div>
+          );
+        }
+      }
+      ReactDOM.createRoot(document.querySelector("#root")).render(<App />);
+    </script>
+  </body>
+</html>
