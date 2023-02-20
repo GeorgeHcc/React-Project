@@ -3,6 +3,7 @@ import propTypes from "prop-types";
 export class NavBar extends Component {
   render() {
     const { banners, title } = this.props;
+    
     return (
       <ul>
         {banners.map((item) => (
