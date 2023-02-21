@@ -10,6 +10,7 @@ export class NavBar extends Component {
           <li title={title}>{item}</li>
         ))}
       </ul>
+      
     );
   }
 }
