@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 export class NumberList extends Component {
   constructor(props) {
-    super(props);
+    super(props); 
     this.state = {
       movies: [
         { name: "mov1", content: "this is mov1!", rate: 9.1, tag: 2019 },
@@ -42,5 +42,6 @@ function Number(props) {
     </ul>
   );
 }
+
 
 export default NumberList;
