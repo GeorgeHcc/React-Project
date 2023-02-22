@@ -16,11 +16,13 @@ export class CtrlComponent extends Component {
       <div>
         <p>CtrlComponent</p>
         <CtrlInput title={title} />
+        <NormalInpult/>
       </div>
     );
   }
 }
 
+//受控组件input 
 function CtrlInput(props) {
   const [value, setValue] = useState("this is a Control Input!");
   function onChange(event){
@@ -41,4 +43,13 @@ function CtrlInput(props) {
   );
 }
 
+//
+function NormalInpult(){
+    return(
+       <div className="normal">
+        <span>this is a normal input</span>
+         <input type="text" />
+       </div>
+    )
+}
 export default CtrlComponent;
